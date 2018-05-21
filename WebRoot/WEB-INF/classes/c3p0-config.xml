@@ -1,0 +1,43 @@
+<c3p0-config>
+  <default-config>
+    <property name="driverClass">com.mysql.jdbc.Driver</property>
+    <property name="jdbcUrl">jdbc:mysql://localhost:3306/bookstore</property>
+    <property name="user">root</property>
+    <property name="password">root</property>
+    
+    <property name="acquireIncrement">5</property>
+    <property name="initialPoolSize">10</property>
+    <property name="minPoolSize">5</property>
+    <property name="maxPoolSize">20</property>
+    
+    <!-- 不太清楚 对不对 连接池为数据源单个Connection缓存的PreparedStatement数，这个配置比maxStatements更有意义，
+    	因为它缓存的服务对象是单个数据连接，
+		#如果设置的好，肯定是可以提高性能的。为0的时候不缓存 -->
+    <property name="maxStatementsPerConnection">5</property>
+
+    <!--
+    <user-overrides user="swaldman">
+      <property name="debugUnreturnedConnectionStackTraces">true</property>
+    </user-overrides>
+    -->
+
+  </default-config>
+
+
+  <named-config name="mysql">
+    <property name="driverClass">com.mysql.jdbc.Driver</property>
+    <property name="jdbcUrl">jdbc:mysql://localhost:3306/bookstore</property>
+    <property name="user">root</property>
+    <property name="password">root</property>
+    
+    <property name="acquireIncrement">5</property>
+    <property name="initialPoolSize">10</property>
+    <property name="minPoolSize">5</property>
+    <property name="maxPoolSize">20</property>
+    
+    <!-- 不太清楚 对不对 -->
+    <property name="maxStatementsPerConnection">5</property>
+   </named-config>
+
+
+</c3p0-config>
